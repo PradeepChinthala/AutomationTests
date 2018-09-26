@@ -9,7 +9,7 @@ namespace Automation.Paramters
         {
             string file = "Parameter_Global.xml";
 
-            string p = Path.GetDirectoryName(Application.ExecutablePath);
+            // p = Path.GetDirectoryName(Application.ExecutablePath);
             string directory = Directory.GetCurrentDirectory();
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(file);
