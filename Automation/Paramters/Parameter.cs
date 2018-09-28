@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml;
 
 namespace Automation.Paramters
@@ -9,8 +10,7 @@ namespace Automation.Paramters
         {
             string file = "Parameter_Global.xml";
 
-            // p = Path.GetDirectoryName(Application.ExecutablePath);
-            string directory = Directory.GetCurrentDirectory();
+            string path = Environment.CurrentDirectory;
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(file);
         }
