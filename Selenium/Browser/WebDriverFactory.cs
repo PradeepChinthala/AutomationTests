@@ -7,9 +7,9 @@ namespace Selenium.Browser
 {
     public class WebDriverFactory
     {
+        IWebDriver driver;
         public IWebDriver InitializeDriver(string browser,string Url)
-        {
-            IWebDriver driver;
+        {           
 
             switch (browser.ToLower())
             {
@@ -38,6 +38,12 @@ namespace Selenium.Browser
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
             return driver;
+        }
+
+        public void Close()
+        {
+            if (driver != null)
+                driver.Quit();
         }
     }
 }
