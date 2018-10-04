@@ -35,6 +35,7 @@ namespace Selenium.Browser
                 default:
                     throw new ArgumentException($"Browser Option {browser} Is Not Valid - Use Chrome, Firefox or IE Instead");
             }
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
             return driver;
